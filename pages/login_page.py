@@ -6,12 +6,14 @@ class LoginPage:
     def __init__(self, driver):
         self.driver = driver
 
+    # Locators
+    link_test_login_page = (By.LINK_TEXT, "Test Login Page")
     username = (By.ID, "username")
     password = (By.ID, "password")
     login_btn = (By.XPATH, "//button[text()='Login']")
 
     def open(self):
-        self.driver.get(f"{get_base_url()}/login")
+        self.driver.get(self.link_test_login_page)
 
     def login(self, user, pwd):
         self.driver.find_element(*self.username).send_keys(user)
