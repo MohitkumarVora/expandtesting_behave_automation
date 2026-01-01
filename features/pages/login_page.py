@@ -1,10 +1,8 @@
 from selenium.webdriver.common.by import By
-from utils.config_reader import get_base_url
+from pages.base_page import BasePage
 
-class LoginPage:
 
-    def __init__(self, driver):
-        self.driver = driver
+class LoginPage(BasePage):
 
     # Locators
     link_test_login_page = (By.LINK_TEXT, "Test Login Page")
