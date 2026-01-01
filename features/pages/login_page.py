@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
+from features.pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
@@ -11,9 +11,9 @@ class LoginPage(BasePage):
     login_btn = (By.XPATH, "//button[text()='Login']")
 
     def open(self):
-        self.driver.get(self.link_test_login_page)
+        self.click(self.link_test_login_page)
 
     def login(self, user, pwd):
-        self.driver.find_element(*self.username).send_keys(user)
-        self.driver.find_element(*self.password).send_keys(pwd)
-        self.driver.find_element(*self.login_btn).click()
+        self.type(self.username, user)
+        self.type(self.password, pwd)
+        self.click(self.login_btn)

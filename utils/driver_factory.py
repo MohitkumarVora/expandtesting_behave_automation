@@ -3,10 +3,11 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from utils.config_reader import get_browser
+from features.configs.config_reader import ConfigReader
 
 def create_driver():
-    browser = get_browser()
+    config = ConfigReader()
+    browser = config.get_browser()
 
     if browser == "chrome":
         driver = webdriver.Chrome(
@@ -20,5 +21,6 @@ def create_driver():
         raise ValueError(f"Unsupported browser: {browser}")
 
     driver.maximize_window()
+    driver.delete_all_cookies()
     driver.implicitly_wait(10)
     return driver
