@@ -15,6 +15,54 @@ Key flows covered:
 - **Login flow** (`login.feature`): valid and invalid login scenarios, URL verification, success/error messages, and logout visibility.
 - **Web Inputs flow** (`web_inputs.feature`): entering and validating number/text/password/date fields, rejecting invalid numbers, and verifying the Clear button behavior and output area.
 
+```
+EXPANDTESTING_BEHAVE_AUTOMATION
+│
+├── .idea/                     # IDE configuration (PyCharm)
+├── .venv/                     # Python virtual environment
+│
+├── features/
+│   ├── __pycache__/            # Python cache files
+│   │
+│   ├── configs/                # Configuration files
+│   │   └── config_reader.py    # Reads browser, base URL, waits, etc.
+│   │
+│   ├── pages/                  # Page Object Model (POM) classes
+│   │   ├── base_page.py        # Common reusable Selenium actions
+│   │   ├── login_page.py       # Login page locators & actions
+│   │   └── web_input_page.py   # Web Inputs page locators & actions
+│   │
+│   ├── steps/                  # Step definition files
+│   │   ├── __init__.py
+│   │   ├── login_steps.py      # Login feature step definitions
+│   │   └── web_input_steps.py  # Web Inputs feature step definitions
+│   │
+│   ├── __init__.py
+│   ├── environment.py          # Behave hooks (before/after scenario)
+│   ├── login.feature           # Login feature file
+│   └── web_inputs.feature      # Web Inputs feature file
+│
+├── reports/                    # Allure / test execution reports
+│
+├── screenshots/                # Failure screenshots
+│
+├── utils/                      # Utility/helper classes
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── driver_factory.py       # Browser driver initialization
+│   └── screenshot_utils.py     # Screenshot capture logic
+│
+├── .gitignore                  # Git ignored files
+├── behave.ini                  # Behave configuration (tags, formatters)
+├── README.md                   # Project documentation
+├── requirements.txt            # Python dependencies
+└── run.py                      # Test execution entry point
+```
+
+
+
+
+
 ### 2. Project Structure
 
 - **`features/`**
