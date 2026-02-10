@@ -18,12 +18,7 @@ Key flows covered:
 ```
 EXPANDTESTING_BEHAVE_AUTOMATION
 │
-├── .idea/                     # IDE configuration (PyCharm)
-├── .venv/                     # Python virtual environment
-│
 ├── features/
-│   ├── __pycache__/            # Python cache files
-│   │
 │   ├── configs/                # Configuration files
 │   │   └── config_reader.py    # Reads browser, base URL, waits, etc.
 │   │
@@ -47,7 +42,6 @@ EXPANDTESTING_BEHAVE_AUTOMATION
 ├── screenshots/                # Failure screenshots
 │
 ├── utils/                      # Utility/helper classes
-│   ├── __pycache__/
 │   ├── __init__.py
 │   ├── driver_factory.py       # Browser driver initialization
 │   └── screenshot_utils.py     # Screenshot capture logic
@@ -58,10 +52,6 @@ EXPANDTESTING_BEHAVE_AUTOMATION
 ├── requirements.txt            # Python dependencies
 └── run.py                      # Test execution entry point
 ```
-
-
-
-
 
 ### 2. Project Structure
 
